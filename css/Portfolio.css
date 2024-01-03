@@ -1,0 +1,358 @@
+@charset "UTF-8";
+
+/*共通部分
+-------------------*/
+html{
+    font-size: 100%;
+    width: 100%;
+}
+body{
+    font-family: "YuGothic Medium","游ゴシック Medium",YuGothic,"游ゴシック体","ヒラギの角ゴ　Pro W3",sans-serif;
+    line-height: 2;
+    color: #333;
+}
+img{
+  width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.page-title{
+    padding: 0 10%;
+    padding-top: 100px;
+    letter-spacing: 1.05rem;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 2;
+}
+
+
+/*HEADER
+--------------------*/
+.page-header{
+    height: 70px;/*高さ指定*/
+    width:100%;/*横幅指定*/
+}
+
+/*JSを使いfixedクラスが付与された際の設定*/
+.page-header{
+    position: fixed;/*fixedを設定して固定*/
+      z-index: 999;/*最前面へ*/
+      top:0;/*位置指定*/
+      left:0;/*位置指定*/
+      background-color: #999;
+}
+.header_inner {
+    position: relative;
+    padding: 15px;
+}
+
+.nav-item a:hover{
+   color: #fff;
+
+}
+
+.big-bg{
+    size: contain;
+    background-position: center top;
+    padding-top: 70px;
+    
+}
+
+
+/*WORKS
+--------------*/
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 50px;
+    margin: 0 10%;
+    margin-bottom: 100px;
+    margin-top: 5%;
+}
+.item {
+    text-align: center;
+}
+
+
+
+/*ABOUt
+-----------------------*/
+#area-2{
+    background-color: #333;
+    color: #fff;
+}
+
+.myintroduce{
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 0 10%;
+}
+.photo img{
+    padding: 0 10%;
+    width: 260px;
+}
+
+h1{
+    text-align: center;
+    line-height: 6;
+    font-size: 2rem;
+    letter-spacing: 1.05rem;
+}
+
+
+.name{
+    padding-left: 0 auto;
+    line-height: 1;
+    font-size: 1.5rem;
+}
+
+article p{
+    line-height: 1.7;
+    padding: 0 auto;
+}
+.skill{
+    padding-bottom: 100px;
+}
+
+
+/*CONTACT
+-----------------------*/
+.form{
+    padding: 0 10%;
+    line-height: 3;
+}
+
+/*フォーム
+--------------------------*/
+form{
+    padding: 0 10%;
+}
+label{
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    display: block;
+}
+input[type="text"],
+input[type="email"],
+textarea{
+    background: rgba(255,255,255,.5);
+    border: 1px #333 solid;
+    padding: 10px;
+    font-size: 1rem;
+}
+input[type="text"],
+input[type="email"]{
+    width: 100%;
+    max-width: 240px;
+}
+textarea{
+    width: 100%;
+    max-width: 480px;
+    height: 6rem;
+}
+button{
+    padding-bottom: 100px;
+}
+button{
+    background:#333;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    margin-bottom: 100px;
+  }
+  button:hover{
+    background:#fff;
+    color:#333;
+  }
+  button:before,button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #333;
+    transition:400ms ease all;
+  }
+  button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  button:hover:before,button:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+  
+
+/*フッター
+-------------------------*/
+.footer{
+    color: #fff;
+    background-color: #333;
+    text-align: center;
+    padding: 50px;
+    font-size: 1.5rem;
+}
+
+
+
+/*モバイル版
+--------------------------*/
+@media only screen and (max-width: 620px) {
+    .page-title{
+        text-align: center;
+        letter-spacing: 0.7rem;
+    }
+
+    /*ABOUT*/
+    .myintroduce{
+        flex-direction: column;
+    }
+    h1{
+      letter-spacing: 0.3rem;
+      padding: 0 10%;
+      line-height: 3rem;
+      font-size: 5.2vw;
+    }
+    .photo{
+      text-align: center;
+      padding: 0 auto;
+    }
+    
+    
+    /*フォーム*/
+    .form{
+      text-align: center;
+    }
+    
+    
+    .nav {
+      position: fixed;
+      right: -320px; /* 右から出てくる */
+      top: 0;
+      width: 300px; /* スマホに収まるサイズ */
+      height: 100vh;
+      padding-top: 60px;
+      background-color: #fff;
+      transition: all .6s;
+      z-index: 200;
+      overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+    }
+    .hamburger {
+      position: absolute;
+      right: 15px;
+      top: 8px;
+      width: 40px; /* クリックしやすい幅 */
+      height: 40px; /* クリックしやすい高さ */
+      cursor: pointer;
+      z-index: 300;
+    }
+    .main-nav {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .nav-item {
+      text-align: center;
+      padding: 0 14px;
+    }
+    .nav-item a {
+      display: block;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      text-decoration: none;
+      color: #333;
+    }
+    .nav-item a:hover {
+      background-color: #eee;
+    }
+    .hamburger_border {
+      position: absolute;
+      left: 11px;
+      width: 18px;
+      height: 2px;
+      background-color: #333;
+      transition: all .6s;
+    }
+    .hamburger_border_top {
+      top: 14px;
+    }
+    .hamburger_border_center {
+      top: 20px;
+    }
+    .hamburger_border_bottom {
+      top: 26px;
+    }
+    .black_bg {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 100;
+      background-color: #333;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .6s;
+      cursor: pointer;
+    }
+  
+    /* 表示された時用のCSS */
+    .nav-open .nav {
+      right: 0;
+    }
+    .nav-open .black_bg {
+      opacity: .8;
+      visibility: visible;
+    }
+    .nav-open .hamburger_border_top {
+      transform: rotate(45deg);
+      top: 20px;
+    }
+    .nav-open .hamburger_border_center {
+      width: 0;
+      left: 50%;
+    }
+    .nav-open .hamburger_border_bottom {
+      transform: rotate(-45deg);
+      top: 20px;
+    }
+  }/* sp */
+  
+
+  @media only screen and (min-width: 621px) {
+    .header_inner{
+      width: 100%;
+    }
+    
+    .main-nav{
+      text-align: right;
+    }
+    .main-nav li{
+      display: inline-block;
+      text-align: right;
+      padding-left: 30px;
+      margin-top: 20px;
+      margin-right: 30px;
+    }
+    .main-nav li a{
+      color: #111;
+      font-weight: 500;
+      font-size: large;
+    }
+    
+  }/* pc */
+  
