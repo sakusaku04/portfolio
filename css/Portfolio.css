@@ -58,8 +58,15 @@ a{
 .big-bg{
     size: contain;
     background-position: center top;
-    padding-top: 70px;
+    margin: 0 10%;
     
+}
+
+@media only screen and (max-width: 900px) {
+ .big-bg{
+  padding-top: 70px;
+  margin: 0 0;
+ }
 }
 
 
@@ -89,8 +96,14 @@ a{
 .myintroduce{
     display: flex;
     justify-content: space-between;
-    
+    gap: 10px;
     padding: 0 10%;
+}
+@media only screen and (min-width: 1200px){
+  .myintroduce{
+    justify-content: center;
+  }
+  
 }
 .photo img{
     padding: 0 10%;
