@@ -18,3 +18,7 @@ function toggleNav() {
   });
 }
 toggleNav();
+//メニューリンクをクリックしたら、サイドメニューを閉じる。
+ $('#menu a[href]').on('click', function(event) {
+  $('.hamburger').trigger('click');
+   });
